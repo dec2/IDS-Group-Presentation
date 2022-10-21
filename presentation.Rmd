@@ -1,6 +1,6 @@
 ---
-title: "Presentation title"
-subtitle: "Presentation subtitle (if any)"
+title: "Analysis of a dataset to compare different star classifications"
+subtitle: ""
 author: "Team JMAD <br> Alex, Declan, Jiayi and Malachi "
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
