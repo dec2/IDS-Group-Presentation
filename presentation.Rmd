@@ -52,6 +52,7 @@ class: inverse, center, middle
 
 # Our General Research Question
 
+
 .pull-right[
 
 ]
