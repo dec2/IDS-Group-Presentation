@@ -186,15 +186,25 @@ print(ave)
 # in my slides. But I need the resulting data frame for a plot I want to present.
 iris_modified <- iris %>%
   mutate(Species = fct_other(Species, keep = "setosa"))
+
+
 ```
 
 ```{r plot-iris, echo = FALSE}
 # Code hidden with echo = FALSE
 # Uses modified iris dataset from previous chunk
 # Play around with height and width until you're happy with the look
-ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
-  geom_point() + 
-  theme_minimal() # theme options: https://ggplot2.tidyverse.org/reference/ggtheme.html
+  ggplot(data = dataset, 
+       mapping = aes(x = desc(Temperature(K)),
+                     y = Luminosity(L/Lo),
+                     colour = Star color)) +
+       geom_point() + 
+         labs(title = "Hertzband Russel Diagram"
+              x = "Temperature"
+              y = "Luminosity") 
+              colour = "Star Colour") 
+          
+                
 ```
 
 ---
@@ -223,6 +233,7 @@ If you want to generate a table, make sure it is in the HTML format (instead of 
 
 ```{r iris-table, echo = FALSE}
 kable(head(iris), format = "html")
+
 ```
 
 ---
