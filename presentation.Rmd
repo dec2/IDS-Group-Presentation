@@ -62,8 +62,8 @@ To investigate the relationship between different properties of stars, specifica
 
 Where it came from
 
-- Kaggle Datasets - "Star dataset to predict star types"
-
+- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset. 
+- The second dataset was found in .... , it is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
 --
 
 How it was collected
@@ -101,20 +101,26 @@ class: inverse, center, middle
 # Stating and Refining the Question
 
 - 1) Descriptive: summarize the frequency for each different spectral class from a dataset based on a collection of stars.
--- 
-- 2) Exploratory: examine relationships between a range of different properties of stars.
--- 
-- 3) Inferential: examine whether there are any trends between star colour and luminosity.
---
----
 
-# Stating and Refining the Question continued
-- 4) Predictive: predicting the absolute magnitude based on spectral class.
--- 
-- 5) Causal: whether a change in star radius causes a change in temperature
--- 
-- 6) Mechanistic: how an increase in distance from Earth causes the apparent magnitude to decrease.
 --
+
+- 2) Exploratory: examine relationships between a range of different properties of stars.
+
+--
+
+- 3) Inferential: examine whether there are any trends between star colour and luminosity.
+
+--
+
+- 4) Predictive: predicting the absolute magnitude based on spectral class.
+
+--
+
+- 5) Causal: whether a change in star radius causes a change in temperature
+
+--
+
+- 6) Mechanistic: how an increase in distance from Earth causes the apparent magnitude to decrease.
 
 ---
 
