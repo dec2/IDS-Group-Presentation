@@ -197,11 +197,11 @@ iris_modified <- iris %>%
   ggplot(data = dataset, 
        mapping = aes(x = desc(Temperature(K)),
                      y = Luminosity(L/Lo),
-                     colour = Star color)) +
+                     colour = Star_color)) +
        geom_point() + 
-         labs(title = "Hertzband Russel Diagram"
-              x = "Temperature"
-              y = "Luminosity") 
+         labs(title = "Hertzband Russel Diagram",
+              x = "Temperature",
+              y = "Luminosity", 
               colour = "Star Colour") 
           
                 
