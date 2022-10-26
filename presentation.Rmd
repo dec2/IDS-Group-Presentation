@@ -118,7 +118,7 @@ class: inverse, center, middle
 
 --
 
-- 6) Mechanistic: how an increase in distance from Earth causes the apparent magnitude to decrease.
+- 6) Mechanistic: how an increase in distance from the Sun causes the apparent magnitude to decrease.
 
 ---
 
