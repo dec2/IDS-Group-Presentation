@@ -51,7 +51,7 @@ class: inverse, center, middle
 ---
 
 # Our General Research Question
-INSERT RESEARCH QUESTION
+To investigate the relationship between different properties of stars, specifically the relationship between Luminosity and Temperature. 
 
 .pull-right[
 
