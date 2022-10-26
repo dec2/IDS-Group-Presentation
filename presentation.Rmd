@@ -60,8 +60,8 @@ To investigate the relationship between different properties of stars, specifica
 
 Where it came from
 
-- Kaggle Datasets - "Star dataset to predict star types"
-
+- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset. 
+- The second dataset was found in .... , it is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
 --
 
 How it was collected
