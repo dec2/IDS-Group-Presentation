@@ -40,7 +40,6 @@ style_xaringan(
 
 class: center, middle
 
----
 
 class: inverse, center, middle
 
