@@ -63,7 +63,7 @@ Where it came from
 
 - The second dataset was found in astronexus.com, an online database for Astronomy. The dataset itself is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
 
-- 
+
 --
 
 How it was collected
@@ -78,7 +78,7 @@ The cases
 
 ---
 
-# Our Data
+# Our Data (continued)
 
 The observations and variables
 
