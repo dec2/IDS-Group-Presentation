@@ -39,7 +39,6 @@ style_xaringan(
 )
 ```
 
-class: center, middle
 
 
 class: inverse, center, middle
@@ -49,11 +48,10 @@ class: inverse, center, middle
 ---
 
 # Our General Research Question
+
+
 To investigate the relationship between different properties of stars, specifically the relationship between Spectral class and Absolute magnitude.
 
-.pull-right[
-
-]
 
 ---
 
@@ -62,7 +60,9 @@ To investigate the relationship between different properties of stars, specifica
 Where it came from
 
 - Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset. 
+
 - The second dataset was found in .... , it is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
+
 --
 
 How it was collected
@@ -75,7 +75,9 @@ The cases
 
 - 7 features about 240 stars
 
---
+---
+
+# Our Data
 
 The observations and variables
 
