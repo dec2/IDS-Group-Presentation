@@ -59,21 +59,22 @@ To investigate the relationship between different properties of stars, specifica
 
 Where it came from
 
-- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset. 
+- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset.
 
-- The second dataset was found in .... , it is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
+- The second dataset was found in astronexus.com, an online database for Astronomy. The dataset itself is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
 
+- 
 --
 
 How it was collected
 
-- Websites & calculated by 4 Astronomical formulas
-
+- The data was collected from the two websites mentioned before & calculated by 4 Astronomical formulas.
 --
 
 The cases
 
 - 7 features about 240 stars
+- We thought having the two datasets would be useful as they could be contrasted and compared. 
 
 ---
 
