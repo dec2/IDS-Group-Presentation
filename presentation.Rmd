@@ -21,7 +21,7 @@ library(tidyverse)
 library(palmerpenguins)
 library(knitr)
 library(xaringanthemer)
-catalogue <- read.csv("data/hygdata_v3.csv")
+
 ```
 
 ```{r setup, include=FALSE}
@@ -31,6 +31,8 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 ```{r load-data, include=FALSE}
 # Load your data here
+ds <- read.csv("data/hygdata_v3.csv")
+  
 ```
 
 ```{r include=FALSE}
@@ -47,67 +49,19 @@ class: inverse, center, middle
 
 ---
 
-# Our General Research Question
+# Research Question
 
 
-To investigate the relationship between different properties of stars, specifically the relationship between Spectral class and Absolute magnitude.
+## To investigate the relationship between different properties of stars, especifically the relationship between Spectral class and Absolute magnitude.
 
 
 ---
 
-# Our Data
-
-Where it came from
-
-- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset.
-
-- The second dataset was found in astronexus.com, an online database for Astronomy. The dataset itself is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0c4ac7f3b049692da560e7abda226f53f9072797
---
-
-How it was collected
-
-- The data was collected from the two websites mentioned before & calculated by 4 Astronomical formulas.
+# Stating and Refining the Research Question
 
 --
 
-The cases
-
-- 7 features about 240 stars
-
-- We thought having the two datasets would be useful as they could be contrasted and compared. 
-
----
-
-# Our Data (continued)
-
-The observations and variables
-
-- 240 observations
-
-- Continuous discrete: Temperature(K), Luminosity(L/Lo), Radius (R/Ro), Absolute magnitude(Mv)
-
-- Discontinuous discrete: Star type
-
-- Categorical: Star color, Spectral Class
-
-
----
-
-class: inverse, center, middle
-
-# Section 2 - Data Analysis Plan
-
-
----
-
-# Stating and Refining the Question
-
-- 1) Descriptive: summarize the frequency for each different spectral class from a dataset based on a collection of stars.
+- 1) Descriptive: ssummarize the frequency for each different spectral class from a dataset based on a collection of stars.
 
 --
 
@@ -115,39 +69,102 @@ class: inverse, center, middle
 
 --
 
-- 3) Inferential: examine whether there are any trends between star colour and luminosity.
+- 3) Inferential: examine whether there are any trends between temperature and luminosity.
 
 --
 
-- 4) Predictive: predicting the absolute magnitude based on spectral class.
+- 4) Predictive: predicting the apparent magnitude based on spectral class.
 
---
-
-- 5) Causal: whether a change in star radius causes a change in temperature
-
---
-
-- 6) Mechanistic: how an increase in distance from the Sun causes the apparent magnitude to decrease.
 
 ---
 
-# Plots
+# Our Dataset
 
-```{r plot-iris, echo = FALSE}
+37 variables and 119,614 observations
 
-# Code hidden with echo = FALSE
-# Uses modified iris dataset from previous chunk
-# Play around with height and width until you're happy with the loo
-acc_dist_catalogue <- catalogue %>%
-   filter(distance > 0, distance < 100000) 
-ggplot(acc_dist_catalogue, mapping = aes(x = absmag,
-                     y = distance)) +
-    labs(title = "Distance-Magnitude Relation",
-              x = "Absolute Magnitude",
-              y = "Distance From Earth") +
-    geom_hex()
-
-
-                
+```{r view-dataset, eval=TRUE, echo=FALSE}
+glimpse(ds)
 ```
 
+
+
+---
+# Filtered Dataset
+
+```{r echo=FALSE}
+ds_hyd_clean <- ds %>%
+  filter(distance > 0, distance < 100000) %>%
+  subset(select = -c(hip, hd, hr, gl, bf, proper, ra, dec, pmra, pmdec, flam, x, y, z , vx, vy, vz, rarad, decrad, pmrarad, pmdecrad, bayer, var, var_min, var_max, rv, comp, comp_primary, con, base))  %>%
+  rename (
+    star_ID = id,
+    apparent_magnitude = mag,
+    luminosity = lum,
+    absolute_magnitude = absmag,
+    colour_index = ci,
+    spectral_class = spect
+  )
+
+
+
+```
+```{r eval=TRUE, echo=FALSE}
+glimpse(ds_hyd_clean)
+```
+
+--
+
+7 variables and 109,398 observations
+
+--
+
+- Categorical: spectral class
+- Discrete: star ID
+- Continuous: distance, apparent magnitude, absolute magnitude, colour index, luminosity
+
+---
+
+class: inverse, center, middle
+
+# Section 2 - Data Analysis
+
+---
+
+# Method
+
+--
+
+Q1
+
+- 1) Remove invalid observations 
+- 2) Adding two new columns - main spectral class + sub spectral class 
+- 3)Plot a bar chart
+
+--
+
+Q2
+
+- 1) Plot a scatter/line graph
+- 2) Facet the scatter/line graph
+
+--
+
+Q3
+
+- 1) Plot a scatter/line graph
+
+--
+
+Q4
+
+- 1) Split the dataset into 5 subsets
+- 2) Make the logistic regression model: apparent magnitude <- absolute magnitude + distance
+
+---
+
+# The Plots and Findings
+
+
+
+---
+
+# The Models and Findings

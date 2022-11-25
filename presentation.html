@@ -4,7 +4,7 @@
     <title>Analysis of a dataset to compare different star classifications</title>
     <meta charset="utf-8" />
     <meta name="author" content="Team JMAD   Alex, Declan, Jiayi and Malachi" />
-    <meta name="date" content="2022-10-28" />
+    <meta name="date" content="2022-11-25" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### University of Edinburgh
 ]
 .date[
-### 2022-10-28
+### 2022-11-25
 ]
 
 ---
@@ -44,67 +44,19 @@ class: inverse, center, middle
 
 ---
 
-# Our General Research Question
+# Research Question
 
 
-To investigate the relationship between different properties of stars, specifically the relationship between Spectral class and Absolute magnitude.
+## To investigate the relationship between different properties of stars, especifically the relationship between Spectral class and Absolute magnitude.
 
 
 ---
 
-# Our Data
-
-Where it came from
-
-- Kaggle Datasets - "Star dataset to predict star types". This is for the first dataset.
-
-- The second dataset was found in astronexus.com, an online database for Astronomy. The dataset itself is useful as it can be mutated (there are multiple missing values) and has more variables to work with. 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0c4ac7f3b049692da560e7abda226f53f9072797
---
-
-How it was collected
-
-- The data was collected from the two websites mentioned before &amp; calculated by 4 Astronomical formulas.
+# Stating and Refining the Research Question
 
 --
 
-The cases
-
-- 7 features about 240 stars
-
-- We thought having the two datasets would be useful as they could be contrasted and compared. 
-
----
-
-# Our Data (continued)
-
-The observations and variables
-
-- 240 observations
-
-- Continuous discrete: Temperature(K), Luminosity(L/Lo), Radius (R/Ro), Absolute magnitude(Mv)
-
-- Discontinuous discrete: Star type
-
-- Categorical: Star color, Spectral Class
-
-
----
-
-class: inverse, center, middle
-
-# Section 2 - Data Analysis Plan
-
-
----
-
-# Stating and Refining the Question
-
-- 1) Descriptive: summarize the frequency for each different spectral class from a dataset based on a collection of stars.
+- 1) Descriptive: ssummarize the frequency for each different spectral class from a dataset based on a collection of stars.
 
 --
 
@@ -112,26 +64,138 @@ class: inverse, center, middle
 
 --
 
-- 3) Inferential: examine whether there are any trends between star colour and luminosity.
+- 3) Inferential: examine whether there are any trends between temperature and luminosity.
 
 --
 
-- 4) Predictive: predicting the absolute magnitude based on spectral class.
+- 4) Predictive: predicting the apparent magnitude based on spectral class.
 
---
-
-- 5) Causal: whether a change in star radius causes a change in temperature
-
---
-
-- 6) Mechanistic: how an increase in distance from the Sun causes the apparent magnitude to decrease.
 
 ---
 
-# Plots
+# Our Dataset
 
-&lt;img src="presentation_files/figure-html/plot-iris-1.png" width="80%" /&gt;
+37 variables and 119,614 observations
 
+
+```
+## Rows: 119,614
+## Columns: 37
+## $ id           &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+## $ hip          &lt;int&gt; NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17…
+## $ hd           &lt;int&gt; NA, 224700, 224690, 224699, 224707, 224705, NA, NA, 22470…
+## $ hr           &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ gl           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…
+## $ bf           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…
+## $ proper       &lt;chr&gt; "Sol", "", "", "", "", "", "", "", "", "", "", "", "", ""…
+## $ ra           &lt;dbl&gt; 0.000000, 0.000060, 0.000283, 0.000335, 0.000569, 0.00066…
+## $ dec          &lt;dbl&gt; 0.000000, 1.089009, -19.498840, 38.859279, -51.893546, -4…
+## $ distance     &lt;dbl&gt; 0.0000, 219.7802, 47.9616, 442.4779, 134.2282, 257.7320, …
+## $ pmra         &lt;dbl&gt; 0.00, -5.20, 181.21, 5.24, 62.85, 2.53, 226.29, -208.12, …
+## $ pmdec        &lt;dbl&gt; 0.00, -1.88, -0.93, -2.91, 0.16, 9.07, -12.84, -200.79, -…
+## $ rv           &lt;dbl&gt; 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -31.0, 0.0, 0.0, …
+## $ mag          &lt;dbl&gt; -26.70, 9.10, 9.27, 6.61, 8.06, 8.55, 12.31, 9.64, 9.05, …
+## $ absmag       &lt;dbl&gt; 4.850, 2.390, 5.866, -1.619, 2.421, 1.494, 8.607, 5.828, …
+## $ spect        &lt;chr&gt; "G2V", "F5", "K3V", "B9", "F0V", "G8III", "M0V:", "G0", "…
+## $ ci           &lt;dbl&gt; 0.656, 0.482, 0.999, -0.019, 0.370, 0.902, 1.336, 0.740, …
+## $ x            &lt;dbl&gt; 0.000005, 219.740502, 45.210918, 344.552785, 82.835513, 1…
+## $ y            &lt;dbl&gt; 0.000000, 0.003449, 0.003365, 0.030213, 0.012476, 0.03406…
+## $ z            &lt;dbl&gt; 0.000000, 4.177065, -16.008996, 277.614965, -105.619540, …
+## $ vx           &lt;dbl&gt; 0.00000000, 0.00000004, -0.00000007, 0.00000392, 0.000000…
+## $ vy           &lt;dbl&gt; 0.00000000, -0.00000554, 0.00004213, 0.00001124, 0.000040…
+## $ vz           &lt;dbl&gt; 0.00000000, -0.00000200, -0.00000020, -0.00000486, 0.0000…
+## $ rarad        &lt;dbl&gt; 0.000000e+00, 1.569341e-05, 7.396115e-05, 8.762629e-05, 1…
+## $ decrad       &lt;dbl&gt; 0.000000000, 0.019006788, -0.340318952, 0.678222363, -0.9…
+## $ pmrarad      &lt;dbl&gt; 0.000000e+00, -2.521031e-08, 8.785309e-07, 2.540424e-08, …
+## $ pmdecrad     &lt;dbl&gt; 0.000000e+00, -9.114497e-09, -4.508767e-09, -1.410808e-08…
+## $ bayer        &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…
+## $ flam         &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ con          &lt;chr&gt; "", "Psc", "Cet", "And", "Phe", "Phe", "", "Peg", "Peg", …
+## $ comp         &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ comp_primary &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+## $ base         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "", "…
+## $ lum          &lt;dbl&gt; 1.000000e+00, 9.638290e+00, 3.922835e-01, 3.869011e+02, 9…
+## $ var          &lt;chr&gt; "", "", "", "", "", "", "", "", "Z", "", "", "", "", "", …
+## $ var_min      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 12.462, NA, 11.748, NA, NA, NA, N…
+## $ var_max      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 12.162, NA, 7.648, NA, NA, NA, NA…
+```
+
+
+
+---
+# Filtered Dataset
+
+
+
+```
+## Rows: 109,398
+## Columns: 7
+## $ star_ID            &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, …
+## $ distance           &lt;dbl&gt; 219.7802, 47.9616, 442.4779, 134.2282, 257.7320, 55…
+## $ apparent_magnitude &lt;dbl&gt; 9.10, 9.27, 6.61, 8.06, 8.55, 12.31, 9.64, 9.05, 8.…
+## $ absolute_magnitude &lt;dbl&gt; 2.390, 5.866, -1.619, 2.421, 1.494, 8.607, 5.828, 2…
+## $ spectral_class     &lt;chr&gt; "F5", "K3V", "B9", "F0V", "G8III", "M0V:", "G0", "M…
+## $ colour_index       &lt;dbl&gt; 0.482, 0.999, -0.019, 0.370, 0.902, 1.336, 0.740, 1…
+## $ luminosity         &lt;dbl&gt; 9.63829024, 0.39228346, 386.90113166, 9.36698878, 2…
+```
+
+--
+
+7 variables and 109,398 observations
+
+--
+
+- Categorical: spectral class
+- Discrete: star ID
+- Continuous: distance, apparent magnitude, absolute magnitude, colour index, luminosity
+
+---
+
+class: inverse, center, middle
+
+# Section 2 - Data Analysis
+
+---
+
+# Method
+
+--
+
+Q1
+
+- 1) Remove invalid observations 
+- 2) Adding two new columns - main spectral class + sub spectral class 
+- 3)Plot a bar chart
+
+--
+
+Q2
+
+- 1) Plot a scatter/line graph
+- 2) Facet the scatter/line graph
+
+--
+
+Q3
+
+- 1) Plot a scatter/line graph
+
+--
+
+Q4
+
+- 1) Split the dataset into 5 subsets
+- 2) Make the logistic regression model: apparent magnitude &lt;- absolute magnitude + distance
+
+---
+
+# The Plots and Findings
+
+
+
+---
+
+# The Models and Findings
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
